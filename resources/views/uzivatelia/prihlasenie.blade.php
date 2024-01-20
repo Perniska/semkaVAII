@@ -13,9 +13,6 @@
     <link rel="icon" href="{{ asset('obrazky/favicon.ico') }}" type="image/x-icon" sizes="32x32">
     <link rel="icon" href="{{ asset('obrazky/favicon-32x32.png') }}" type="image/x-icon" sizes="32x32">
 
-    <!-- Pripojenie css -->
-    <link rel="stylesheet" href="{{ asset('css/stylesheet.css') }}">
-
 
     <!-- Pripojenie css -->
     <link rel="stylesheet" href="{{ asset('css/pop-up-login.css') }}">
@@ -23,15 +20,11 @@
     <title>Gitarujeme</title>
 </head>
 <body>
-<div class="vrchStranky">
-    <img src="{{ asset('obrazky/1.png') }}" alt="logo" ><h1>REGISTRÁCIA</h1>
-</div>
 
 
 
-<form method="post" id=registrationForm action="{{route('uzivatel.update', ['uzivatel' => $uzivatel])}}">
+<form method="post" id=registrationForm action="{{route('login-user')}}">
     @csrf
-    @method('put')
     <div class="center">
         <button id="show-login" type="button">  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
@@ -44,14 +37,13 @@
         <div class="formular">
             <h2>Prihlásenie</h2>
             <div class="form-element">
-                <input type="email" name="email" id="email" value="{{$uzivatel->email}}"  />
+                <input type="email" name="email" id="email"  />
                 @error('email')
                 <p class="error">{{ $message }}</p>
                 @enderror
 
-                <label for="meno">Meno</label>
-                <input type="text" name="meno" id="meno" value="{{$uzivatel->meno}}"  />
-                @error('meno')
+                <input type="text" name="password" id="password"   />
+                @error('password')
                 <p class="error">{{ $message }}</p>
                 @enderror
             </div>

@@ -1,14 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
-.center{
-    position: absolute;
-    top:50%;
-    left:50%;
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.center {
+    position: fixed;
+    top:5.7%;
+    left:67%;
     transform: translate(-50%,-50%);
+    z-index: 10000;
 }
 
 
-/* Style for the button */
-.center button {
+.center button{
     padding: 10px 20px;
     font-size: 15px;
     font-weight:600;
@@ -18,15 +23,21 @@
     outline:none;
     cursor: pointer;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4vh; /* Adjust the height as needed */
 }
+
+
+
 
 /* Other styles for the popup */
 .popup {
-    position: absolute;
-    top: -150%;
-    left: 50%;
+    z-index: -1;
+    position: absolute; /* Použite fixed namiesto absolute */
     opacity: 0;
-    transform: translate(-50%, -50%) scale(1.25);
+    transform: translate(0, 0) scale(1.25);
     width: 380px;
     padding: 20px 30px;
     background: #fff;
@@ -37,14 +48,19 @@
     transform 200ms ease-in-out 0ms;
 }
 
-.popup.active{
-    top:50%;
+
+
+.popup.active {
+    z-index: 3049499;
+    top:10%;
+    left:70%;
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(0, 0) scale(1);
     transition: top 0ms ease-in-out 0ms,
     opacity 200ms ease-in-out 0ms,
     transform 200ms ease-in-out 0ms;
 }
+
 
 .popup .close-button {
     position: absolute;
@@ -60,6 +76,7 @@
     cursor: pointer;
 }
 
+
 .popup h2 {
     text-align: center;
     color: #222;
@@ -71,18 +88,20 @@
     margin: 15px 0;
 }
 
-.formular .form-element label {
+.formular .form-element label{
     font-size: 14px;
     color: black;
 }
 
-.formular button label {
+.formular button label{
     cursor: pointer;
 }
 
 .center button label {
     cursor: pointer;
 }
+
+
 
 .popup .formular input[type="email"],.popup .formular input[type="password"] , .popup .formular input[type="text"] {
     margin-top:5px;
@@ -94,7 +113,7 @@
     border-radius: 5px;
 }
 
-.formular button {
+.formular button  {
     margin: 15px 0;
     padding: 10px 20px;
     font-size: 15px;
@@ -124,7 +143,7 @@
 
 
 
-.popup .submit-container button:disabled{
+.popup .submit-container button:disabled {
     background: darkred;
     cursor: not-allowed;
 }
@@ -133,12 +152,12 @@
     cursor: not-allowed;
 }
 
-.popup .submit-container button:enabled{
+.popup .submit-container button:enabled {
     background: darkgreen;
     cursor: pointer;
 }
 
-.popup .submit-container button:enabled label {
+.popup .submit-container button:enabled label{
     cursor: pointer;
 }
 
@@ -148,6 +167,7 @@
     flex-wrap: wrap;
     margin-top: -1rem;
     padding: 0 16px;
+    text-align: left;
 }
 .requirement {
     font-size: 14px;

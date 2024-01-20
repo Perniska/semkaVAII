@@ -1,35 +1,28 @@
-document.addEventListener("DOMContentLoaded", function() {
-
-
-    document.querySelector("#show-login").addEventListener("click",function (){
-        document.querySelector(".popup").classList.add("active");
+document.addEventListener("DOMContentLoaded", function () {
+    // Registration Form
+    document.querySelector("#registrationForm #show-login").addEventListener("click", function () {
+        document.querySelector("#registrationForm .popup").classList.add("active");
         disableSubmitButton();
     });
 
-    document.querySelector(".popup .close-button").addEventListener("click",function (){
-        document.querySelector(".popup").classList.remove("active");
-        document.querySelector("form").reset();
-        updateRequirement("match",false);
-        updateRequirement("length",false);
-        updateRequirement("lowercase",false);
-        updateRequirement("uppercase",false);
+    document.querySelector("#registrationForm .popup .close-button").addEventListener("click", function () {
+        document.querySelector("#registrationForm .popup").classList.remove("active");
+        document.querySelector("#registrationForm").reset();
+        updateRequirement("match", false);
+        updateRequirement("length", false);
+        updateRequirement("lowercase", false);
+        updateRequirement("uppercase", false);
         updateRequirement('number', false);
         updateRequirement('characters', false);
     });
 
-
-
-
-
-
 });
-
 
 
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirm-password");
 const showPassword = document.getElementById("show-password");
-showPassword.addEventListener('click', (event) => {
+showPassword.addEventListener('click', () => {
     if (password.type === 'password') {
         password.type = "text"
         confirmPassword.type = "text"

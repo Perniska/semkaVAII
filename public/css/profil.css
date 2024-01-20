@@ -1,0 +1,32 @@
+
+.profil .oslovenie{
+    font-size: 20px;
+    position: fixed;
+    color: whitesmoke;
+    top:3.8%;
+    left:73%;
+    z-index: 197;
+}
+
+
+.tlacidlo button{
+    position: fixed; /* Ak chcete fixné umiestnenie */
+    top: 30px; /* Nastavte hodnotu podľa potreby */
+    right: 10px; /* Nastavte hodnotu podľa potreby */
+    float: right;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 4px;
+    font-size: 15px;
+    font-weight: 400;
+    background: dimgray;
+    border-radius: 8px;
+    padding: 8px 20px;
+    width: fit-content;
+    z-index: 197;
+}
+
+.tlacidlo button a{
+    color: whitesmoke;
+    text-decoration: none;
+}

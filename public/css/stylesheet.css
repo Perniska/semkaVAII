@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
 body {
     background-color: lightslategray;
     margin: 0;
@@ -6,105 +8,76 @@ body {
 
 .vrchStranky h1 {
     font-family: "Georgia",sans-serif;
-    font-size: 52px;
+    font-size: 30px;
+    float: left;
+    padding-top: 30px;
+    padding-left: 20px;
+    position: absolute;
+    color: whitesmoke;
+    display: none;
 }
 
 .vrchStranky img {
-    float: left;
-    max-width:5%;
-    max-height:5%;
-
+    float: right;
+    padding-top: 2px;
+    max-width:9%;
+    max-height:9%;
+    padding-right:50%;
+    position: relative;
 }
 
-.vrchStranky {
+.vrchStranky_1 img {
+    float: left;
+    padding-top: 0.1%;
+    position: relative;
+}
+
+.vrchStranky_1 {
     text-align: center;
     background-color: darkslategray;
-    min-inline-size : 750px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-
-
+    max-width:10%;
+    max-height:10%;
 }
-
 .menu {
     overflow: hidden;
     background-color: #333;
-    border-bottom-style: double;
-    border-top-style: double;
-    border-bottom-color: black;
-    min-inline-size : 750px;}
-
-.menu a {
-    float: left;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+    background-blend-mode: color;
+    min-inline-size: 100%;
+    margin: 2px 0;
+    padding: 10px;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around; /* Adjust spacing between menu items */
 }
 
-/* Interakcia užívateľa s menu */
+.menu a {
+    flex: 1; /* Distribute available space equally among menu items */
+    margin: 0 5px; /* Add margin for better separation */
+    height: 40px; /* Set a fixed height for the menu items */
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background: #222;
+    color: #f5f5f5;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    text-decoration: none; /* Remove underline */
+}
+
 .menu a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: #555; /* Change background color on hover */
+    color: #fff;
 }
 
 .menu a.aktivne {
     background-color: darkslategray;
-    color: white;
-    position: relative;
 }
-
-.gitara img {
-    position: relative;
-
-
-}
-.gitara p {
-    font-family: "Courier New", Courier, monospace;
-    font-size: 14px;
-    background-color: #dddddd;
-    width: fit-content; /* Aby mi pozadie nepresahovalo text*/
-    /* Oddelenie od ľavej strany stránky*/
-    margin: 0 50px 100px;
-    left : 50px;
-    font-weight: bolder;
-    position: absolute;
-
-}
-.gitara {
-    position: absolute;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-}
-
-.akordy h1 {
-    position: relative;
-    -webkit-text-stroke: 1px gainsboro;
-}
-.akordy p {
-    position: relative;
-    color: #dddddd;
-    background-color: darkslategray;
-    border: 3px #333333;
-
-}
-
-.akordy img {
-
-    position: relative;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.akordy {
-    text-align: center;
-    display: block;
-    width: fit-content;
-    margin-left:480px;
-}
-
-
-
 

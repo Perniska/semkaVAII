@@ -1,0 +1,54 @@
+
+.gitara img {
+    position: relative;
+
+
+}
+.gitara p {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+    background-color: #dddddd;
+    width: fit-content; /* Aby mi pozadie nepresahovalo text*/
+    /* Oddelenie od ľavej strany stránky*/
+    margin: 0 50px 100px;
+
+    left : 50px;
+    font-weight: bolder;
+    position: absolute;
+
+}
+.gitara {
+    position: fixed;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    top: 20%;
+    z-index: 1;
+}
+
+.akordy h1 {
+    position: relative;
+    -webkit-text-stroke: 1px gainsboro;
+}
+.akordy p {
+    position: relative;
+    color: #dddddd;
+    background-color: darkslategray;
+    border: 3px #333333;
+
+}
+
+.akordy img {
+
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.akordy {
+    text-align: center;
+    display: block;
+    width: fit-content;
+    margin-left:480px;
+    padding-top: 8%;
+}

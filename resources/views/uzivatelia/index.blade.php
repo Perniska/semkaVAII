@@ -13,9 +13,6 @@
     <link rel="icon" href="{{ asset('obrazky/favicon.ico') }}" type="image/x-icon" sizes="32x32">
     <link rel="icon" href="{{ asset('obrazky/favicon-32x32.png') }}" type="image/x-icon" sizes="32x32">
 
-    <!-- Pripojenie css -->
-    <link rel="stylesheet" href="{{ asset('css/stylesheet.css') }}">
-
 
     <!-- Pripojenie css -->
     <link rel="stylesheet" href="{{ asset('css/pop-up-login.css') }}">
@@ -23,11 +20,6 @@
     <title>Gitarujeme</title>
 </head>
 <body>
-<div class="vrchStranky">
-    <img src="{{ asset('obrazky/1.png') }}" alt="logo" ><h1>REGISTRÁCIA</h1>
-</div>
-
-
 
 <form method="post" id=registrationForm action="{{route('uzivatel.destroy', ['uzivatel' => $uzivatel])}}">
     @csrf
