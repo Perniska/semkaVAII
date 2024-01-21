@@ -1,14 +1,15 @@
 
 
 .comments {
+    z-index: 2;
     position: absolute;
-    top:50%;
-    left: 10%;/* Center the entire .comments div */
-    padding-top: 100px;
+    top:12%;
+    left: 0;
+    padding-top: 10px;
     padding-right: 30px;
     padding-left: 30px;
-    background-color: #aaaaaa;
-    width: fit-content;
+    background: lightslategray;
+    width: 800px;
     border-radius: 10px;
 }
 
@@ -35,7 +36,7 @@
     width: 700px;
 }
 
-.comments .btn {
+.btn {
     display: block;
     margin: 0 auto; /* Center the anchor element inside the .btn class */
     text-decoration: none;
@@ -49,4 +50,19 @@
     padding: 8px 20px;
     width: fit-content;
 }
+
+
+
+.comments textarea {
+    width: 800px;
+    height: 50px;
+}
+
+.formularNaSkrytie {
+    display: none;
+}
+
+
+
+
 

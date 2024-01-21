@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Models\Uzivatel;
+use App\Models\Comment;
 use Illuminate\Routing\Controller;
 
 class UzivatelController extends Controller

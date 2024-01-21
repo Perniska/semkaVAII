@@ -34,6 +34,8 @@
     </div>
     @endif
 
+
+
     @if(session()->has('uzivatel'))
             @php
                 $uzivatel = session('uzivatel');
@@ -54,18 +56,22 @@
 </header>
 </div>
 
+
+
+
+
+
 @if(session()->has('uzivatel'))
     @php
         $uzivatel = session('uzivatel');
     @endphp
 
-        <!-- Váš kód pre prihláseného užívateľa -->
     @include("uzivatelia.profil")
     @include("commenty.commenty")
 @else
-    <!-- Váš kód pre neprihláseného užívateľa -->
     @include("uzivatelia.registracia")
     @include("uzivatelia.prihlasenie_po_r")
+    @include("commenty.commenty")
 @endif
 
 </body>

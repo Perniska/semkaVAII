@@ -9,24 +9,21 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('odpovedes', function (Blueprint $table) {
+        Schema::create('songs', function (Blueprint $table) {
             $table->id();
-            $table->string('email')->nullable();
-            $table->string('comment_id')->nullable();
-            $table->string('meno')->nullable();
-            $table->string('odpoved')->nullable();
+            $table->foreignId('interpret_id')->constrained();
+            $table->string('title');
+            $table->text('lyrics');
             $table->timestamps();
-
         });
     }
-
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('odpovedes');
+        Schema::dropIfExists('songs');
     }
 };

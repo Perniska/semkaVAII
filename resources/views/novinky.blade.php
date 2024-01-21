@@ -53,16 +53,24 @@
         @endif
 </header>
 </div>
+<div style=" margin-top: 5.5% ;font-size: 13px ; position: absolute ;background-color: darkslategray; border-radius: 10px ;width: 400px">
+    <h1 style="background-color: #dddddd ;">Zoznam Interpretov :</h1>
+    <ul>
+        @foreach($interprets as $interpret)
+            <li><a  style=" text-decoration: none;color: ghostwhite ;font-size: 25px" href="{{ route('interpret.piesne', ['interpret' => $interpret]) }}">{{ $interpret->name }}</a></li>
+        @endforeach
+    </ul>
+</div>
+
 
 @if(session()->has('uzivatel'))
     @php
         $uzivatel = session('uzivatel');
     @endphp
 
-        <!-- Váš kód pre prihláseného užívateľa -->
+
     @include("uzivatelia.profil")
 @else
-    <!-- Váš kód pre neprihláseného užívateľa -->
     @include("uzivatelia.registracia")
     @include("uzivatelia.prihlasenie_po_r")
 @endif

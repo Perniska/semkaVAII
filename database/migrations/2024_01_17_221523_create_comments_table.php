@@ -13,17 +13,17 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->string('email');
-            $table->integer('post_id')->unique();
-            $table->text('comment_body');
+            $table->string('email')->nullable();
+            $table->string('meno')->nullable();
+            $table->string('comment_body')->nullable();
             $table->timestamps();
 
-            // Add foreign key constraint for 'email'
+            // Foreign key pro 'email'
             $table->foreign('email')
                 ->references('email')
                 ->on('uzivatels')
-                ->onUpdate('cascade') // Choose the appropriate action
-                ->onDelete('cascade'); // Choose the appropriate action
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 
