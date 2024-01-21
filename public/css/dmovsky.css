@@ -23,6 +23,7 @@ body{
     min-height: 12%;
     background : darkslategray;
     z-index: 100;
+    place-items: center;
 }
 
 .box .logo{

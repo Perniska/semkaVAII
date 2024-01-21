@@ -110,10 +110,10 @@ class UzivatelController extends Controller
                 return view('domov',['uzivatel' => $user]);
                // return redirect('dashboard');
             }else {
-                return back()->with('fail', 'Ta ša niečo dodrbalo a ty niesi zaregistrovany , poleno...heslo je napiač');
+                return back()->with('fail', 'Ta ša niečo pototo a ty niesi zaregistrovany , poleno...heslo je naprd');
             }
         }else {
-            return back()->with('fail', 'Ta ša niečo dodrbalo a ty niesi zaregistrovany , poleno');
+            return back()->with('fail', 'Ta ša niečo pototo a ty niesi zaregistrovany , poleno');
         }
     }
 

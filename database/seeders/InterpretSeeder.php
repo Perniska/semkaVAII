@@ -12,6 +12,9 @@ class InterpretSeeder extends Seeder
     {
         Interpret::create(['name' => 'Lucie']);
         Interpret::create(['name' => 'Kabát']);
-        // pridajte ďalších interpretov podľa potreby
+        Interpret::create(['name' => 'Elán']);
+        Interpret::create(['name' => 'Aleš Brichta']);
+        Interpret::create(['name' => 'Harlej']);
+        Interpret::create(['name' => 'Wanastowi Vjecy']);
     }
 }
