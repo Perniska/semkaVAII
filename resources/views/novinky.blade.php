@@ -71,8 +71,7 @@
 
     @include("uzivatelia.profil")
 @else
-    @include("uzivatelia.registracia")
-    @include("uzivatelia.prihlasenie_po_r")
+
 @endif
 
 </body>

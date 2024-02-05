@@ -11,13 +11,13 @@
     <link rel="icon" href="{{ asset('obrazky/favicon.ico') }}" type="image/x-icon" sizes="32x32">
     <link rel="icon" href="{{ asset('obrazky/favicon-32x32.png') }}" type="image/x-icon" sizes="32x32">
 
-    <link rel="stylesheet" href="{{ asset('css/dmovsky.css') }}">
+
     <link rel="stylesheet" href="{{ asset('css/profil.css') }}">
 </head>
 <body>
 
-<div class="profil">
-        <div class="wrapper">
+<div class="profil" >
+        <div class="wrapper_1">
             <div class="oslovenie">
                 <p>Vitajte, {{ $uzivatel->email }}!</p>
             </div>

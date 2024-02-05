@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('comment_body')->nullable();
             $table->timestamps();
 
-            // Foreign key pro 'email'
+            // Foreign key pre 'email'
             $table->foreign('email')
                 ->references('email')
                 ->on('uzivatels')

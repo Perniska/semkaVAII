@@ -123,8 +123,7 @@
     @include("uzivatelia.profil")
 @else
     <!-- Váš kód pre neprihláseného užívateľa -->
-    @include("uzivatelia.registracia")
-    @include("uzivatelia.prihlasenie_po_r")
+
 @endif
 
 </body>

@@ -22,8 +22,9 @@ body{
     height: fit-content;
     min-height: 12%;
     background : darkslategray;
-    z-index: 100;
+    z-index: 100000000000;
     place-items: center;
+
 }
 
 .box .logo{
@@ -68,6 +69,7 @@ body{
     background-color: dimgray;
 
 }
+
 
 
 .banner{

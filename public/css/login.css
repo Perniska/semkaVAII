@@ -2,59 +2,76 @@
 *{
     z-index: 999;
 }
+.telo {
+    position: relative;
+    height: 100vh;
+}
+
+.telo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../obrazky/280-2808958_guitars-with-a-background-color.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(5px);
+    background-position: center top; /* Adjust the top position based on your navbar height */
+    opacity: 0.2;
+}
+
+.obal {
+    background-image: url("../obrazky/music-2902891_960_720.jpg");
+    position: fixed;
+    top: 30%;
+    left: 30%; /* Adjust the left position */
+    width: 70%; /* Adjust the width */
+    max-width: 700px; /* Set a max-width to ensure it doesn't exceed a certain size */
+    height: fit-content;
+    border-radius: 10px;
+    padding: 20px 250px 20px 20px; /* Adjust padding */
+
+}
+
+.obal h2 {
+    padding-bottom: 20px;
+    padding-top: 10px;
+    font-size: 40px;
+}
+
 .static .formular_2 #email_1[type="email"],.static .formular_2 #heslo_1[type="password"] {
-    display:block;
-    width:8%;
-    padding: 3px;
+    width: 80%;
+    padding: 10px;
     outline:none;
     border:1px solid #aaa;
     border-radius: 5px;
-    position: fixed;
-}
 
-.static .formular_2 #heslo_1[type="password"] {
-    position: fixed;
-    top:3.8%;
-    left:73%;
 }
 
 
-.static .formular_2 #email_1[type="email"] {
-    position: fixed;
-    top:3.8%;
-    left:82%;
+.form-element{
+    padding-bottom: 3%;
 }
 
 .static .formular_2 label[for="email_1"]{
-    position: absolute;
-    /*display: block; */
-    top: 3.5%;
-    right:19%;
-    font-size: 12px;
-    display: none;
+    position: relative;
+
+    font-size: 27px;
 
 }
 
 .static .formular_2 label[for="heslo_1"]{
-    position: absolute;
-    /*display: block; */
-    top: 3.5%;
-    right:31%;
-    font-size: 12px;
-    display: none;
+    position: relative ;
+    font-size: 27px;
+
 
 }
 
-.static .submit-container-login button{
-    background: darkgreen;
-    position: absolute;
-    top: 3.2%;
-    right:1.5%;
-}
 
-
-.formular_2 button  {
-    position: fixed;
+.formular_2 button {
+    width: 70%;
     margin: 2px 0;
     padding: 8px 10px;
     font-weight: 600;
@@ -63,13 +80,9 @@
     outline: none;
     cursor: pointer;
     border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.static .formular_2 button {
-    position: fixed;
+.static .formular_2 button ,.formular_2_a button {
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
     letter-spacing: 4px;
@@ -78,9 +91,70 @@
     background:dimgray;
     color:#f5f5f5;
     border-radius: 8px;
+
 }
+
+.formular_2_a button{
+    width: 70%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 8px 10px;
+    font-size: 15px;
+    font-weight:600;
+    color:#222;
+    background: #f5f5f5;
+    border-radius: 5px;
+}
+
+.formular_2_a {
+   padding-bottom: 5%;
+
+}
+
 
 .submit-container-login label {
     cursor: pointer;
+}
+
+button label {
+    cursor: pointer;
+}
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 768px) {
+    .obal {
+        width: 100%;
+        left: -1%;
+        padding: 20px;
+        top: 40%
+    }
+
+    .obal h2 {
+        font-size: 30px;
+    }
+
+    .static .formular_2 #email_1[type="email"],
+    .static .formular_2 #heslo_1[type="password"] {
+        width: 50%;
+        height: 20%;
+        padding: 1px;
+    }
+
+    .static .formular_2 label[for="email_1"],
+    .static .formular_2 label[for="heslo_1"] {
+        font-size: 15px;
+    }
+
+    .formular_2 button,
+    .static .formular_2 button,
+    .formular_2_a button {
+        width: 50%;
+        font-size: 10px;
+    }
+
+    .formular_2_a {
+        padding-bottom: 2%;
+    }
 }
 

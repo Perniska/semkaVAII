@@ -114,29 +114,28 @@
 
 <script>
     function editAndReply(commentId) {
-        // Call the editComment function
+
         editComment(commentId);
 
-        // Call the odkrySkryFormular function
         odkrySkryFormular(commentId);
     }
 </script>
 
 <script>
     function deleteComment(commentId) {
-        if (confirm('Are you sure you want to delete this comment?')) {
+        if (confirm('Naozaj chcete odstániť tento komentár?')) {
             $.ajax({
                 url: "{{ route('delete_comment') }}",
                 type: 'POST',
                 data: { _token: '{{ csrf_token() }}', commentId: commentId },
                 success: function(response) {
                     if (response.success) {
-                        // Remove the deleted comment from the UI
+
                         $('#comment_' + commentId).remove();
                     }
                 },
                 error: function(xhr) {
-                    // Handle errors
+
                 }
             });
         }
