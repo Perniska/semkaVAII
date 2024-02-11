@@ -113,12 +113,9 @@
              $uzivatel = session('uzivatel');
          @endphp
 
-             <!-- Váš kód pre prihláseného užívateľa -->
          @include("uzivatelia.profil")
      @else
-         <!-- Váš kód pre neprihláseného užívateľa -->
-         @include("uzivatelia.registracia")
-         @include("uzivatelia.prihlasenie_po_r")
+
      @endif
 
 
@@ -127,3 +124,5 @@
 
 </body>
 </html>
+
+

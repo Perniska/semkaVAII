@@ -19,20 +19,26 @@
 
 </head>
 <body>
-
+<div class="telo">
+<div class="pozadie">
+<div class="obal">
 <form method="post" id="loginForm" action="{{route('login-user')}}">
     @csrf
 
     <div class="static">
+        <h2>Prihlásenie</h2>
         <!-- Login form in your HTML -->
         <div class="formular_2">
             <div class="form-element">
-                <input type="email" name="email" id="email_1" placeholder="email"   value="{{old('email')}}"/>
+                <label for="email_1">Zadajte e-mail :</label>
+                <input type="email" name="email" id="email_1" placeholder="email" value="{{old('email')}}"/>
                 <span class="text-danger">@error('email') {{$message}} @enderror </span>
 
-                <span class="text-danger">@error('heslo') {{$message}} @enderror </span>
-                <input type="password" name="heslo" id="heslo_1" placeholder="heslo" value="{{old('heslo')}}"/>
+                <div style="padding-bottom: 4%"></div>
 
+                <label for="heslo_1">Zadajte heslo :</label>
+                <input type="password" name="heslo" id="heslo_1" placeholder="heslo" value="{{old('heslo')}}"/>
+                <span class="text-danger">@error('heslo') {{$message}} @enderror </span>
             </div>
 
             <div class="submit-container-login">
@@ -47,6 +53,12 @@
     </div>
 </form>
 
-
+    <div class="formular_2_a">
+        <div style="padding-bottom: 5%"> </div>
+       @include("uzivatelia.registracia")
+    </div>
+</div>
+</div>
+</div>
 </body>
 </html>

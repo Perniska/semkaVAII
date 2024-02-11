@@ -10,23 +10,32 @@ class CommentController extends Controller
 
     public function pridat_comment(Request $request)
     {
-        // Získání údajů o uživateli z session
         $uzivatel = $request->session()->get('uzivatel');
 
-        // Pokud $uzivatel není null, můžete pokračovat
         if ($uzivatel) {
             $comment = new Comment;
             $comment->meno = $uzivatel->meno;
             $comment->email = $uzivatel->email;
-            $comment->comment_body = $request->comment_body; ///tohoto nemchytat...to jedine funguje :D
+            $comment->comment_body = $request->comment_body;
+
+            // Uloženie fotky, ak bola priložená
+            if ($request->hasFile('photo')) {
+                $photo = $request->file('photo');
+                $photoPath = $photo->storePublicly('uploads', 'public');
+                $comment->photo_path = $photoPath;
+            }
+
             $comment->save();
 
             return redirect()->back();
         } else {
-            // Uživatel není přihlášen, můžete přijmout další opatření
             return redirect()->route('login');
         }
     }
+
+
+
+
     public function commenty() {
         $comments = Comment::all();
         $replies = Odpovede::all();
@@ -38,13 +47,9 @@ class CommentController extends Controller
         $commentId = $request->input('commentId');
         $editedCommentText = $request->input('editedCommentText');
 
-        // Find the comment by ID
         $comment = Comment::find($commentId);
 
-        // Update the comment text
         $comment->comment_body = $editedCommentText;
-
-        // Save the changes
         $comment->save();
 
         return redirect()->back();
@@ -56,12 +61,9 @@ class CommentController extends Controller
 
     public function add_reply(Request $request)
     {
-        // Validation
 
-        // Get user data from session
         $user = $request->session()->get('uzivatel');
 
-        // If $user is not null, continue
         if ($user) {
             $reply = new Odpovede;
             $reply->meno = $user->meno;
@@ -84,7 +86,7 @@ class CommentController extends Controller
     public function deleteComment(Request $request)
     {
         $commentId = $request->input('commentId');
-        // Implement logic to delete the comment from the database
+
         Comment::where('id', $commentId)->delete();
         return response()->json(['success' => true]);
     }

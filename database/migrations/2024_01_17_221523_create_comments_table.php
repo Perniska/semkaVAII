@@ -16,9 +16,10 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('meno')->nullable();
             $table->string('comment_body')->nullable();
+            $table->string('photo_path')->nullable(); // Stĺpec pre uloženie cesty k obrázku
             $table->timestamps();
 
-            // Foreign key pro 'email'
+            // Foreign key pre 'email'
             $table->foreign('email')
                 ->references('email')
                 ->on('uzivatels')
@@ -26,6 +27,7 @@ return new class extends Migration
                 ->onDelete('cascade');
         });
     }
+
 
     /**
      * Reverse the migrations.

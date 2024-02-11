@@ -69,8 +69,7 @@
     @include("uzivatelia.profil")
     @include("commenty.commenty")
 @else
-    @include("uzivatelia.registracia")
-    @include("uzivatelia.prihlasenie_po_r")
+
     @include("commenty.commenty")
 @endif
 

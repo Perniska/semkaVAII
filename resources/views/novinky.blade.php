@@ -53,7 +53,7 @@
         @endif
 </header>
 </div>
-<div style=" margin-top: 5.5% ;font-size: 13px ; position: absolute ;background-color: darkslategray; border-radius: 10px ;width: 400px">
+<div style=" margin-top: 17vh ;font-size: 13px ; position: absolute ;width: 400px">
     <h1 style="background-color: #dddddd ;">Zoznam Interpretov :</h1>
     <ul>
         @foreach($interprets as $interpret)
@@ -71,8 +71,7 @@
 
     @include("uzivatelia.profil")
 @else
-    @include("uzivatelia.registracia")
-    @include("uzivatelia.prihlasenie_po_r")
+
 @endif
 
 </body>
