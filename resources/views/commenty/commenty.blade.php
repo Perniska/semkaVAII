@@ -15,12 +15,19 @@
         @php
             $uzivatel = session('uzivatel');
         @endphp
-        <form action="{{ route('pridat_comment')}}" onsubmit='console.log("Form comment submitted");' method="post">
+
+
+        <form action="{{ route('pridat_comment')}}" onsubmit='console.log("Form comment submitted");' method="post" enctype="multipart/form-data">
             @csrf
             <h1>Komentáre</h1>
-            <textarea style="border-radius:10px; resize: none;" name="comment_body" placeholder="Napíšte nám čo máte na mysli..."></textarea>
+            <textarea style="border-radius:10px; resize: none;" name="comment_body" placeholder="Napíšte nám co máte na mysli..."></textarea>
+            <div class="custom-file-upload">
+                <input type="file" name="photo" id="photo" accept="image/*" >
+            </div>
+
             <button type="submit" class="btn">Komentovať</button>
         </form>
+
     @endif
 
     <div class="reply">
@@ -28,26 +35,31 @@
     </div>
 
     @foreach ($comments as $comment)
-        <div style="padding-right: 70%">
-            <br>
-            <p style="font-size: 15px;">email: <b>{{ $comment->email }}</b></p>
-            <p id="comment_{{ $comment->id }}" style="border-radius:10px; text-align:left; min-height:50px; background-color: white; display: block; font-family: 'Consolas', sans-serif; width: 800px; height: fit-content">{{ $comment->comment_body }}</p>
-            @if(session()->has('uzivatel'))
-            <div style="float: right">
-                <a style="padding: 5px 5px 5px ; cursor:pointer; font-size: 15px ;border-radius:10px; color: white ;background-color: #4CAF50; width: fit-content " onclick="odkrySkryFormular('{{ $comment->id }}')">Odpovedať</a>
-            </div>
-                @if($uzivatel->email==$comment->email)
-            <div style="float: left">
-                <a style="padding: 5px 5px 5px ; cursor:pointer; font-size: 15px ;border-radius:10px; color: white ;background-color: darkred; width: fit-content " onclick="editComment('{{ $comment->id }}')">Editovať</a>
-            </div>
+
+            <div style="padding-right: 5%; padding-left: 5%;">
                 <br>
+
+                @if ($comment->photo_path != null)
+                    <a href="{{ asset('storage/' . $comment->photo_path) }}" target="_blank">
+                        <img src="{{ asset('storage/' . $comment->photo_path) }}" alt="Fotka komentáře" style="width: 100%;">
+                    </a>
                 @endif
-                <br>
-            @endif
 
-        </div>
+                <p style="font-size: 15px;">email: <b>{{ $comment->email }}</b></p>
+                <p id="comment_{{ $comment->id }}" style="border-radius:10px; text-align:left; min-height:50px; background-color: white; display: block; font-family: 'Consolas', sans-serif; width: 100%; height: fit-content">{{ $comment->comment_body }}</p>
+                @if(session()->has('uzivatel'))
+                    <div style="text-align: right;">
+                        <a style="padding: 5px 10px; cursor:pointer; font-size: 15px; border-radius:10px; color: white; background-color: #4CAF50; display: inline-block;" onclick="odkrySkryFormular('{{ $comment->id }}')">Odpovedať</a>
+                        @if($uzivatel->email==$comment->email)
+                            <a style="padding: 5px 10px; cursor:pointer; font-size: 15px; border-radius:10px; color: white; background-color: darkred; display: inline-block;" onclick="editComment('{{ $comment->id }}')">Editovať</a>
+                        @endif
+                    </div>
+                @endif
 
-        <form class="formularNaSkrytie" action="{{ route('add_reply') }}" onsubmit='console.log("Form reply submitted");' method="post" id="odpovedFormular_{{ $comment->id }}">
+            </div>
+
+
+            <form class="formularNaSkrytie" action="{{ route('add_reply') }}" onsubmit='console.log("Form reply submitted");' method="post" id="odpovedFormular_{{ $comment->id }}">
             @csrf
             <div class="odpovede">
                 <input type="hidden" id="commentID" name="commentID" value="{{ $comment->id }}">
@@ -71,11 +83,12 @@
             <!-- Add this block inside your foreach loop where you display comments -->
             @if(session()->has('uzivatel'))
                 @if($uzivatel->email==$comment->email)
-                    <div style="float: right ;margin-top: -40px">
-                        <a style="padding: 5px 5px 5px ; cursor:pointer; font-size: 15px ;border-radius:10px; color: white ;background-color: #ff6347; width: fit-content " onclick="deleteComment('{{ $comment->id }}')">Vymazať</a>
+                    <div style="float: right; margin-top: -33px; margin-right: -80px;"> <!-- Upravili sme margin-right na 10px -->
+                        <a style="padding: 5px 10px; cursor: pointer; font-size: 15px; border-radius: 10px; color: white; background-color: #ff6347; display: inline-block;" onclick="deleteComment('{{ $comment->id }}')">Vymazať</a>
                     </div>
                 @endif
             @endif
+
 
         @foreach ($replies as $reply)
             @if($reply->comment_id==$comment->id)

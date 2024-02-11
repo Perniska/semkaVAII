@@ -125,9 +125,11 @@ button label {
 @media only screen and (max-width: 768px) {
     .obal {
         width: 100%;
-        left: -1%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         padding: 20px;
-        top: 40%
     }
 
     .obal h2 {
@@ -157,4 +159,5 @@ button label {
         padding-bottom: 2%;
     }
 }
+
 

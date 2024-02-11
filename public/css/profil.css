@@ -33,3 +33,31 @@
     color: whitesmoke;
     text-decoration: none;
 }
+
+@media screen and (max-width: 1100px) {
+    .profil .wrapper_1 {
+        flex-direction: row; /* Změňte směr flexboxu na vodorovný */
+        align-items: center; /* Zarovnejte položky vertikálně */
+        justify-content: flex-end; /* Zarovnejte položky k pravému okraji */
+    }
+
+    .profil .oslovenie,
+    .profil .tlacidlo {
+        margin-bottom: 0; /* Odstraňte mezery mezi oslovením a tlačítkem */
+        margin-right: 10px; /* Přidejte vodorovný odstup mezi oslovením a tlačítkem */
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .profil .oslovenie,
+    .profil .tlacidlo {
+        font-size: 10px;
+
+    }
+    .tlacidlo button {
+        font-size: 10px;
+        padding: 4px 10px;
+        width: fit-content;
+    }
+}

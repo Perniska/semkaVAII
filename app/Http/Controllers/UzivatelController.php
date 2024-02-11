@@ -25,7 +25,11 @@ class UzivatelController extends Controller
 
     public function destroy(Uzivatel $uzivatel){
         $uzivatel->delete();
-        return redirect(route('uzivatel.create'))->with('success', 'Užívateľ je vymazaný');
+        if(session()->has('uzivatel')) {
+            session()->pull('uzivatel');
+        }
+        return view('domov');
+
     }
 
     public function login()

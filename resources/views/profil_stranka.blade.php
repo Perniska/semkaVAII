@@ -115,11 +115,11 @@
 
 
 
-    <form method="post" id=registrationForm action="{{route('uzivatel.destroy', ['uzivatel' => $uzivatel])}}">
+    <form method="post"  style="padding-top: 150px" id=registrationForm action="{{route('uzivatel.destroy', ['uzivatel' => $uzivatel])}}">
         @csrf
         @method('delete')
         <!-- x -  tlačidlo na zatvoreie fromuláru -->
-        <div class="popup">
+        <div class="nepopup">
             <!-- Login form in your HTML -->
             <div class="formular">
                 <h2>!!Odstránenie účtu!!</h2>
@@ -146,6 +146,8 @@
 
         </div>
     </form>
+
+
     <script defer src="{{ asset('pop-up.js') }}"></script>
 
         <!-- Váš kód pre prihláseného užívateľa -->

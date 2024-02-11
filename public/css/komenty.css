@@ -3,7 +3,7 @@
 .comments {
     z-index: 2;
     position: absolute;
-    top:12%;
+    top:17%;
     left: 0;
     padding-top: 10px;
     padding-right: 30px;
@@ -51,6 +51,18 @@
     width: fit-content;
 }
 
+.custom-file-upload  {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+}
+
+.custom-file-upload:hover {
+    background-color: #e0e0e0;
+}
 
 
 .comments textarea {
@@ -65,4 +77,63 @@
 
 
 
+@media screen and (max-width: 1000px) {
+    .comments {
+        width: 400px;
+
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+
+    .comments {
+        position: relative; /* Zmena na relative, aby sa dalo správne zarovnať */
+        padding: 150px; /* Pridanie paddingu */
+        background: lightslategray;
+        width: 90%; /* Zmena na percentuálnu šírku */
+        max-width: 600px; /* Maximálna šírka pre väčšie obrazovky */
+        margin: 0 auto; /* Zarovnanie do stredu */
+        border-radius: 10px;
+    }
+
+    .reply h1 {
+        font-size: 18px; /* Menšia veľkosť nadpisu */
+        padding-bottom: 10px;
+    }
+
+    .comments form h1 {
+        font-size: 24px; /* Menšia veľkosť nadpisu */
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .comments textarea {
+        width: 100%; /* Šírka 100% */
+        height: 100px; /* Zmena na relatívnu výšku */
+    }
+
+    .btn {
+        display: inline-block; /* Zmena na inline-block */
+        margin: 10px auto; /* Center the anchor element inside the .btn class */
+        width: auto; /* Automatická šírka */
+    }
+
+    .custom-file-upload {
+        display: inline-block; /* Zmena na inline-block */
+        padding: 6px 12px;
+        cursor: pointer;
+        background-color: #f2f2f2;
+        border-radius: 4px;
+    }
+
+    .custom-file-upload:hover {
+        background-color: #e0e0e0;
+    }
+
+    .formularNaSkrytie {
+        display: none;
+    }
+
+}
 

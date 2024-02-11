@@ -17,14 +17,25 @@ class CommentController extends Controller
             $comment->meno = $uzivatel->meno;
             $comment->email = $uzivatel->email;
             $comment->comment_body = $request->comment_body;
+
+            // Uloženie fotky, ak bola priložená
+            if ($request->hasFile('photo')) {
+                $photo = $request->file('photo');
+                $photoPath = $photo->storePublicly('uploads', 'public');
+                $comment->photo_path = $photoPath;
+            }
+
             $comment->save();
 
             return redirect()->back();
         } else {
-
             return redirect()->route('login');
         }
     }
+
+
+
+
     public function commenty() {
         $comments = Comment::all();
         $replies = Odpovede::all();
